@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npx prisma *)",
+      "Bash(taskkill //PID 16888 //F)",
+      "Bash(taskkill //PID 16440 //F)",
+      "Bash(curl -s -X POST http://localhost:3000/api/solicitacoes -H \"Content-Type: application/json\" -d '{\"unidadeSolicitante\":\"UBS Teste\",\"situacaoUnidade\":\"SEM_AGUA\",\"cvBomba\":2,\"tipoBomba\":\"CENTRIFUGA\",\"informacoesAdicionais\":\"Contato: Fulano \\(11\\) 90000-0000\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/manutencoes -H \"Content-Type: application/json\" -d '{\"cvBomba\":3,\"tipoBomba\":\"SUBMERSA\",\"status\":\"EM_MANUTENCAO\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/depositos -H \"Content-Type: application/json\" -d '{\"cvBomba\":1.5,\"tipoBomba\":\"CENTRIFUGA\",\"status\":\"LIVRE\"}')",
+      "Bash(curl -s -X PATCH http://localhost:3000/api/solicitacoes/1 -H \"Content-Type: application/json\" -d '{\"unidadeSolicitante\":\"UBS Editada\",\"situacaoUnidade\":\"BOMBA_EMPRESTADA\",\"cvBomba\":2.5,\"tipoBomba\":\"SUBMERSA\",\"numeroProcessoPAE\":\"12345/2026\",\"informacoesAdicionais\":\"Atualizado\"}')",
+      "Bash(curl -s -X PATCH http://localhost:3000/api/manutencoes/9 -H \"Content-Type: application/json\" -d '{\"cvBomba\":5,\"tipoBomba\":\"CENTRIFUGA\",\"status\":\"LIVRE_RETIRADA\"}')",
+      "Bash(curl -s -X PATCH http://localhost:3000/api/depositos/7 -H \"Content-Type: application/json\" -d '{\"cvBomba\":0.5,\"tipoBomba\":\"SUBMERSA\",\"status\":\"QUEBRADA\"}')"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm view *)",
+      "Bash(npm audit *)",
+      "Bash(npx prisma *)",
+      "Bash(npm run *)",
+      "Bash(echo \"started pid $!\")",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s -X POST http://localhost:3000/api/solicitacoes -H \"Content-Type: application/json\" -d '{\"unidadeSolicitante\":\"UBS Centro\",\"situacaoUnidade\":\"SEM_AGUA\",\"cvBomba\":2,\"tipoBomba\":\"CENTRIFUGA\",\"numeroProcessoPAE\":\"00000.000001/2026-01\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/manutencoes -H \"Content-Type: application/json\" -d '{\"cvBomba\":3,\"tipoBomba\":\"SUBMERSA\",\"status\":\"EM_MANUTENCAO\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/depositos -H \"Content-Type: application/json\" -d '{\"cvBomba\":1.5,\"tipoBomba\":\"CENTRIFUGA\",\"status\":\"LIVRE\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/mover -H \"Content-Type: application/json\" -d '{\"fromType\":\"manutencao\",\"fromId\":1,\"toType\":\"deposito\",\"status\":\"QUEBRADA\"}')",
+      "Bash(curl -s http://localhost:3000/api/manutencoes)",
+      "Bash(curl -s http://localhost:3000/api/depositos)",
+      "Bash(curl -s -X POST http://localhost:3000/api/mover -H \"Content-Type: application/json\" -d '{\"fromType\":\"solicitacao\",\"fromId\":1,\"toType\":\"manutencao\",\"status\":\"LIVRE_RETIRADA\"}')",
+      "Bash(curl -s http://localhost:3000/api/solicitacoes)",
+      "Bash(curl -s -X PATCH http://localhost:3000/api/depositos/1 -H \"Content-Type: application/json\" -d '{\"status\":\"QUEBRADA\"}')"
+    ]
+  }
+}

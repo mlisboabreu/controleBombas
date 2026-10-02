@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum TipoBomba {
+  CENTRIFUGA
+  SUBMERSA
+}
+
+enum SituacaoUnidade {
+  SEM_AGUA
+  BOMBA_EMPRESTADA
+}
+
+enum StatusManutencao {
+  LIVRE_RETIRADA
+  EM_MANUTENCAO
+}
+
+enum StatusDeposito {
+  QUEBRADA
+  LIVRE
+}
+
+model Solicitacao {
+  id                    Int             @id @default(autoincrement())
+  unidadeSolicitante    String
+  situacaoUnidade       SituacaoUnidade
+  cvBomba               Float
+  tipoBomba             TipoBomba
+  numeroProcessoPAE     String?
+  informacoesAdicionais String?
+  createdAt             DateTime        @default(now())
+}
+
+model Manutencao {
+  id        Int              @id @default(autoincrement())
+  cvBomba   Float
+  tipoBomba TipoBomba
+  status    StatusManutencao
+  createdAt DateTime         @default(now())
+}
+
+model Deposito {
+  id        Int            @id @default(autoincrement())
+  cvBomba   Float
+  tipoBomba TipoBomba
+  status    StatusDeposito
+  createdAt DateTime       @default(now())
+}
